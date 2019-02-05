@@ -40,7 +40,7 @@ while quit:
         description = input("How would you describe your product?: ")
         products.append(Product(name, price, description))
 
-    elif init_prompt == "list": 
+    elif init_prompt in ["list", "inventory"]: 
         list(products)
     
     elif init_prompt == "total": 
@@ -49,10 +49,10 @@ while quit:
     elif init_prompt == "clear": 
         products.clear()
         
-    elif init_prompt == "commands": 
+    elif init_prompt in ["commands", "command"]: 
         counter = 1
         
-    elif init_prompt == "quit":
+    elif init_prompt in ["quit", "exit"]:
         inventory_file.write(dumps([i.dict for i in products]))
         quit = False
     else: 
